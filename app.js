@@ -12,8 +12,8 @@ const cartManager = new CartManager(pathCartFile);
 const app = express();
 const PORT = 8080;
 
-app.use(express.json()); // Permite que Express entienda JSON
-app.use(express.urlencoded({ extended: true })); // Permite recibir datos de formularios
+app.use(express.json()); // Middleware que permite que Express entienda JSON
+app.use(express.urlencoded({ extended: true })); // Middleware que permite recibir datos de formularios
 
 /*
  * *************** *
@@ -36,38 +36,59 @@ app.listen(PORT, () => {
  */
 
 app.get("/api/products", async (req, res) => {
-	const products = await productManager.getProducts();
-	res.status(200).json({ status: "success", products });
+	try {
+		const products = await productManager.getProducts();
+		res.status(200).json({ status: "success", products });
+	} catch (error) {
+		res.status(500).json({ status: "error", message: error.message });
+	}
 });
 
 app.get("/api/products/:id", async (req, res) => {
-	const { id } = req.params;
-	const product = await productManager.getProductById(id);
-	res.status(200).json({ status: "success", product });
+	try {
+		const { id } = req.params;
+		const product = await productManager.getProductById(id);
+		res.status(200).json({ status: "success", product });
+	} catch (error) {
+		res.status(500).json({ status: "error", message: error.message });
+	}
 });
 
 app.post("/api/products", async (req, res) => {
-	const product = req.body;
-	await productManager.addProduct(product);
-	res.status(200).json({ status: "success", product });
+	try {
+		const product = req.body;
+		await productManager.addProduct(product);
+		res.status(201).json({ status: "success", product });
+	} catch (error) {
+		res.status(500).json({ status: "error", message: error.message });
+	}
 });
 
 app.put("/api/products/:pid", async (req, res) => {
-	const { pid } = req.params;
-	const productData = req.body;
-	if (productData.id) {
-		return res
-			.status(400)
-			.json({ status: "error", message: "No se puede cambiar el id" });
+	try {
+		const { pid } = req.params;
+		const productData = req.body;
+		if (productData.id) {
+			return res.status(500).json({
+				status: "error",
+				message: "No se puede cambiar el id",
+			});
+		}
+		await productManager.updateProduct(pid, productData);
+		res.status(200).json({ status: "success", productData });
+	} catch (error) {
+		res.status(500).json({ status: "error", message: error.message });
 	}
-	await productManager.updateProduct(pid, productData);
-	res.status(200).json({ status: "success", productData });
 });
 
 app.delete("/api/products/:pid", async (req, res) => {
-	const { pid } = req.params;
-	await productManager.deleteProduct(pid);
-	res.status(200).json({ status: "success", message: "Producto eliminado" });
+	try {
+		const { pid } = req.params;
+		await productManager.deleteProduct(pid);
+		res.status(204).send();
+	} catch (error) {
+		res.status(500).json({ status: "error", message: error.message });
+	}
 });
 
 /*
@@ -77,37 +98,44 @@ app.delete("/api/products/:pid", async (req, res) => {
  */
 
 app.post("/api/carts", async (req, res) => {
-	await cartManager.addCart();
-	res.status(200).json({ status: "success", message: "Carrito creado" });
+	try {
+		await cartManager.addCart();
+		res.status(201).json({ status: "success", message: "Carrito creado" });
+	} catch (error) {
+		res.status(500).json({ status: "error", message: error.message });
+	}
 });
 
 app.get("/api/carts", async (req, res) => {
-	const carts = await cartManager.getCarts();
-	res.status(200).json({ status: "success", carts });
+	try {
+		const carts = await cartManager.getCarts();
+		res.status(200).json({ status: "success", carts });
+	} catch (error) {
+		res.status(500).json({ status: "error", message: error.message });
+	}
 });
 
 app.get("/api/carts/:cid", async (req, res) => {
-	const { cid } = req.params;
-	let cart;
 	try {
-		cart = await cartManager.getCartById(cid);
+		const { cid } = req.params;
+		const cart = await cartManager.getCartById(cid);
+		res.status(200).json({ status: "success", cart });
 	} catch (error) {
-		res.status(400).json({ status: "error", message: error.message });
+		res.status(500).json({ status: "error", message: error.message });
 	}
-	res.status(200).json({ status: "success", cart });
 });
 
 app.post("/api/carts/:cid/products/:pid", async (req, res) => {
-	const { cid, pid } = req.params;
 	try {
+		const { cid, pid } = req.params;
 		await cartManager.addProductToCart(cid, pid);
+		res.status(201).json({
+			status: "success",
+			message: "Producto agregado al carrito",
+		});
 	} catch (error) {
-		res.status(400).json({ status: "error", message: error.message });
+		res.status(500).json({ status: "error", message: error.message });
 	}
-	res.status(200).json({
-		status: "success",
-		message: "Producto agregado al carrito",
-	});
 });
 
 /*

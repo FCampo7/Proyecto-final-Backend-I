@@ -4,7 +4,7 @@
     "title": "Teclado Mecánico",
     "description": "Teclado Mecánico de alta calidad",
     "code": "M1kp1241",
-    "price": 1500,
+    "price": 2000,
     "status": true,
     "stock": 20,
     "category": "Teclado",
@@ -39,17 +39,17 @@
     ]
   },
   {
-    "id": "51f265e8-c0de-4baf-abfc-44df71af1b56",
+    "id": "55391a74-f142-4eab-a700-869208eec0fe",
     "title": "Producto 1",
     "description": "Producto a agregar",
-    "code": "ksas1233132",
+    "code": "ksas313221312",
     "price": 130,
-    "status": true,
+    "status": false,
     "stock": 10,
     "category": "Producto",
     "thumbnails": [
-      "adsdaa",
-      "adsadaa"
+      "adsasd",
+      "adsaasd"
     ]
   }
 ]
