@@ -41,14 +41,23 @@ Primera entrega del Proyecto final de la Diplomatura en Desarrollo Fullstack Web
 ### Productos
 
 - GET /api/products
+    > Obtiene todos los productos
 - GET /api/products/:id
+    > Obtiene un producto por su ID
 - POST /api/products
+    > Crea un nuevo producto
 - PUT /api/products/:pid
+    > Actualiza un producto por su ID
 - DELETE /api/products/:pid
+    > Elimina un producto por su ID
 
 ### Carritos
 
 - GET /api/carts
+    > Obtiene todos los carritos
 - GET /api/carts/:cid
+    > Obtiene un carrito por su ID
 - POST /api/carts
+    > Crea un nuevo carrito
 - POST /api/carts/:cid/products/:pid
+    > Agrega un producto al carrito
