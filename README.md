@@ -6,6 +6,8 @@ Primera entrega del Proyecto final de la Diplomatura en Desarrollo Fullstack Web
 
 ```
 .
+├── postman
+│   └── Primera entrega Backend I.postman_collection.json
 ├── src
 │   ├── data
 │   │   ├── carts.json
@@ -14,9 +16,7 @@ Primera entrega del Proyecto final de la Diplomatura en Desarrollo Fullstack Web
 │   └── productManager.js
 ├── app.js
 ├── package.json
-├── Primera entrega Backend I.postman_collection.json
 └── README.md
-
 ```
 
 ## Requisitos
