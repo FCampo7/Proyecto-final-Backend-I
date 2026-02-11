@@ -34,6 +34,8 @@ export class ProductManager {
 				JSON.stringify(products, null, 2),
 				"utf-8",
 			);
+
+			return newProduct;
 		} catch (error) {
 			throw new Error(error.message);
 		}
@@ -65,19 +67,24 @@ export class ProductManager {
 	async updateProduct(productId, productData) {
 		try {
 			const products = await this.getProducts();
-			const productFound = products.find(
+
+			const productFound = products.findIndex(
 				(product) => product.id === productId,
 			);
-			if (!productFound) throw new Error("El producto no existe");
-			const updatedProduct = { ...productFound, ...productData };
-			const updatedProducts = products.map((product) =>
-				product.id === productId ? updatedProduct : product,
-			);
+			if (productFound === -1) throw new Error("El producto no existe");
+
+			products[productFound] = {
+				...products[productFound],
+				...productData,
+			};
+
 			await fs.writeFile(
 				this.path,
-				JSON.stringify(updatedProducts, null, 2),
+				JSON.stringify(products, null, 2),
 				"utf-8",
 			);
+
+			return products[productFound];
 		} catch (error) {
 			throw new Error(error.message);
 		}

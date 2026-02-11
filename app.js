@@ -57,8 +57,8 @@ app.get("/api/products/:id", async (req, res) => {
 app.post("/api/products", async (req, res) => {
 	try {
 		const product = req.body;
-		await productManager.addProduct(product);
-		res.status(201).json({ status: "success", product });
+		const newProduct = await productManager.addProduct(product);
+		res.status(201).json({ status: "success", product: newProduct });
 	} catch (error) {
 		res.status(500).json({ status: "error", message: error.message });
 	}
@@ -74,8 +74,11 @@ app.put("/api/products/:pid", async (req, res) => {
 				message: "No se puede cambiar el id",
 			});
 		}
-		await productManager.updateProduct(pid, productData);
-		res.status(200).json({ status: "success", productData });
+		const updatedProduct = await productManager.updateProduct(
+			pid,
+			productData,
+		);
+		res.status(200).json({ status: "success", product: updatedProduct });
 	} catch (error) {
 		res.status(500).json({ status: "error", message: error.message });
 	}
@@ -99,8 +102,8 @@ app.delete("/api/products/:pid", async (req, res) => {
 
 app.post("/api/carts", async (req, res) => {
 	try {
-		await cartManager.addCart();
-		res.status(201).json({ status: "success", message: "Carrito creado" });
+		const newCart = await cartManager.addCart();
+		res.status(201).json({ status: "success", cart: newCart });
 	} catch (error) {
 		res.status(500).json({ status: "error", message: error.message });
 	}
@@ -128,10 +131,10 @@ app.get("/api/carts/:cid", async (req, res) => {
 app.post("/api/carts/:cid/products/:pid", async (req, res) => {
 	try {
 		const { cid, pid } = req.params;
-		await cartManager.addProductToCart(cid, pid);
+		const updatedCart = await cartManager.addProductToCart(cid, pid);
 		res.status(201).json({
 			status: "success",
-			message: "Producto agregado al carrito",
+			cart: updatedCart,
 		});
 	} catch (error) {
 		res.status(500).json({ status: "error", message: error.message });

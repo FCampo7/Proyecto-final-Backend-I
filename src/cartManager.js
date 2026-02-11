@@ -20,6 +20,8 @@ export class CartManager {
 				JSON.stringify(carts, null, 2),
 				"utf-8",
 			);
+
+			return newCart;
 		} catch (error) {
 			throw new Error(error.message);
 		}
@@ -88,6 +90,8 @@ export class CartManager {
 				JSON.stringify(updatedCarts, null, 2),
 				"utf-8",
 			);
+
+			return updatedCart;
 		} catch (error) {
 			throw new Error(error.message);
 		}
