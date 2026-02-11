@@ -1,0 +1,279 @@
+{
+  "info": {
+    "_postman_id": "1c3375e0-9e48-4eb6-87e0-fef138e16da0",
+    "name": "Primera entrega Backend I",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44799035"
+  },
+  "item": [
+    {
+      "name": "Productos",
+      "item": [
+        {
+          "name": "Obtener Productos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Producto por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products/10c2e58c-4bc9-4387-9ca7-55e5c4435165",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "10c2e58c-4bc9-4387-9ca7-55e5c4435165"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Producto por ID",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"price\": 1500\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products/10c2e58c-4bc9-4387-9ca7-55e5c4435165",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "10c2e58c-4bc9-4387-9ca7-55e5c4435165"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar ID de producto",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"1500\",\n    \"status\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products/10c2e58c-4bc9-4387-9ca7-55e5c4435165",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "10c2e58c-4bc9-4387-9ca7-55e5c4435165"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Agregar Producto",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Producto 2\",\n  \"description\": \"Producto a agregar\",\n  \"code\": \"ksas3132\",\n  \"price\": 13012,\n  \"status\": false,\n  \"stock\": 0,\n  \"category\": \"Producto\",\n  \"thumbnails\": [\n    \"ads\",\n    \"adsa\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Producto",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products/51f265e8-c0de-4baf-abfc-44df71af1b56",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "51f265e8-c0de-4baf-abfc-44df71af1b56"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Carritos",
+      "item": [
+        {
+          "name": "Obtener Carritos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/carts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "carts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear un carrito",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/carts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "carts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Carrito por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/carts/4d9da95d-715b-4b39-8989-9b30142b9438",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "carts",
+                "4d9da95d-715b-4b39-8989-9b30142b9438"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Agregar un producto a un carrito",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/carts/4d9da95d-715b-4b39-8989-9b30142b9438/products/10c2e58c-4bc9-4387-9ca7-55e5c4435165",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "carts",
+                "4d9da95d-715b-4b39-8989-9b30142b9438",
+                "products",
+                "10c2e58c-4bc9-4387-9ca7-55e5c4435165"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Agregar un producto inexistente a un carrito",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/carts/4d9da95d-715b-4b39-8989-9b30142b9438/products/10000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "carts",
+                "4d9da95d-715b-4b39-8989-9b30142b9438",
+                "products",
+                "10000"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

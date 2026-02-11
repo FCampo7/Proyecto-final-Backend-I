@@ -1,0 +1,55 @@
+[
+  {
+    "id": "10c2e58c-4bc9-4387-9ca7-55e5c4435165",
+    "title": "Teclado Mecánico",
+    "description": "Teclado Mecánico de alta calidad",
+    "code": "M1kp1241",
+    "price": 1500,
+    "status": true,
+    "stock": 20,
+    "category": "Teclado",
+    "thumbnail": [
+      "teclado.jpg"
+    ]
+  },
+  {
+    "id": "e551f215-448a-4c78-ac62-e50e8067a8de",
+    "title": "Mouse Mecánico",
+    "description": "Mouse Mecánico de alta calidad",
+    "code": "M1kp1242",
+    "price": 1500,
+    "status": true,
+    "stock": 15,
+    "category": "Mouse",
+    "thumbnail": [
+      "mouse.jpg"
+    ]
+  },
+  {
+    "id": "67b6bf91-4ed0-43a6-9eae-424ad2b7994e",
+    "title": "Monitor 27",
+    "description": "Monitor 27 pulgadas de alta calidad",
+    "code": "M1kp1243",
+    "price": 3000,
+    "status": true,
+    "stock": 10,
+    "category": "Monitor",
+    "thumbnail": [
+      "monitor.jpg"
+    ]
+  },
+  {
+    "id": "51f265e8-c0de-4baf-abfc-44df71af1b56",
+    "title": "Producto 1",
+    "description": "Producto a agregar",
+    "code": "ksas1233132",
+    "price": 130,
+    "status": true,
+    "stock": 10,
+    "category": "Producto",
+    "thumbnails": [
+      "adsdaa",
+      "adsadaa"
+    ]
+  }
+]
