@@ -2,6 +2,23 @@
 
 Primera entrega del Proyecto final de la Diplomatura en Desarrollo Fullstack Web. Consiste en la creación de una API REST para la gestión de productos.
 
+## Arbol de archivos
+
+```
+.
+├── src
+│   ├── data
+│   │   ├── carts.json
+│   │   └── products.json
+│   ├── cartManager.js
+│   └── productManager.js
+├── app.js
+├── package.json
+├── Primera entrega Backend I.postman_collection.json
+└── README.md
+
+```
+
 ## Requisitos
 
 - Node.js 24.13.0 o superior
