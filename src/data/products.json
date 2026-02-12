@@ -8,7 +8,7 @@
 		"status": true,
 		"stock": 20,
 		"category": "Teclado",
-		"thumbnail": ["teclado.jpg"]
+		"thumbnails": ["teclado.jpg"]
 	},
 	{
 		"id": "e551f215-448a-4c78-ac62-e50e8067a8de",
@@ -19,7 +19,7 @@
 		"status": true,
 		"stock": 15,
 		"category": "Mouse",
-		"thumbnail": ["mouse.jpg"]
+		"thumbnails": ["mouse.jpg"]
 	},
 	{
 		"id": "67b6bf91-4ed0-43a6-9eae-424ad2b7994e",
@@ -30,7 +30,7 @@
 		"status": true,
 		"stock": 10,
 		"category": "Monitor",
-		"thumbnail": ["monitor.jpg"]
+		"thumbnails": ["monitor.jpg"]
 	},
 	{
 		"id": "55391a74-f142-4eab-a700-869208eec0fe",
@@ -41,6 +41,6 @@
 		"status": false,
 		"stock": 10,
 		"category": "Producto",
-		"thumbnails": ["adsasd", "adsaasd"]
+		"thumbnails": ["frente.png", "dorso.png"]
 	}
 ]

@@ -5,6 +5,16 @@ import path from "path";
 export class ProductManager {
 	constructor(path) {
 		this.path = path;
+		this.#init();
+	}
+
+	// Si el archivo products.json no existe en la ruta especificada, lo crea cuando se crea una instancia de la clase ProductManager
+	async #init() {
+		try {
+			await fs.access(this.path);
+		} catch (error) {
+			await fs.writeFile(this.path, JSON.stringify([]), "utf-8");
+		}
 	}
 
 	verifyCode(code, products) {

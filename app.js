@@ -131,7 +131,13 @@ app.get("/api/carts/:cid", async (req, res) => {
 app.post("/api/carts/:cid/products/:pid", async (req, res) => {
 	try {
 		const { cid, pid } = req.params;
-		const updatedCart = await cartManager.addProductToCart(cid, pid);
+		const quantity = req.body?.quantity || 1;
+
+		const updatedCart = await cartManager.addProductToCart(
+			cid,
+			pid,
+			quantity,
+		);
 		res.status(201).json({
 			status: "success",
 			cart: updatedCart,

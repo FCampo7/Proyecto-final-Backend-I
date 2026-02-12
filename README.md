@@ -1,8 +1,14 @@
-# Proyecto-final-Backend-I
+# Proyecto final Backend I
 
-Primera entrega del Proyecto final de la Diplomatura en Desarrollo Fullstack Web. Consiste en la creación de una API REST para la gestión de productos.
+Primera entrega del Proyecto final de la Diplomatura en Desarrollo Fullstack Web. Consiste en la creación de una API REST con Node.js y Express para la gestión de productos y carritos.
 
-## Arbol de archivos
+## Autor
+
+### [Francisco Luis Campo](https://github.com/FCampo7)
+
+## Estructura de archivos
+
+La carpeta postman contiene la colección de Postman para probar la API.
 
 ```
 .
@@ -32,9 +38,21 @@ Primera entrega del Proyecto final de la Diplomatura en Desarrollo Fullstack Web
 
 ## Instalación
 
+### Con npm
+
 1. Clonar el repositorio
-2. Ejecutar `npm install` o `bun install`
-3. Ejecutar `npm run dev` o `bun run dev`
+2. Instalar dependencias con `npm install`
+3. Ejecutar
+    1. Modo desarrollo con nodemon: `npm run dev`
+    2. Modo producción: `npm run start`
+
+### Con bun
+
+1. Clonar el repositorio
+2. Instalar dependencias con `bun install`
+3. Ejecutar
+    1. Modo desarrollo con nodemon: `bun run dev`
+    2. Modo producción: `bun run start`
 
 ## Endpoints
 
