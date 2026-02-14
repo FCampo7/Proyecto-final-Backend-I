@@ -1,6 +1,5 @@
 import { v4 as newId } from "uuid";
 import fs from "fs/promises";
-import path from "path";
 
 export class ProductManager {
 	constructor(path) {

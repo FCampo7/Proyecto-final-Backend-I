@@ -13,14 +13,19 @@ La carpeta postman contiene la colección de Postman para probar la API.
 ```
 .
 ├── postman
-│   └── Primera entrega Backend I.postman_collection.json
+│   └── Primera entrega Backend I.postman_collection.json
 ├── src
-│   ├── data
-│   │   ├── carts.json
-│   │   └── products.json
-│   ├── cartManager.js
-│   └── productManager.js
+│   ├── data
+│   │   ├── carts.json
+│   │   └── products.json
+│   ├── routes
+│   │   ├── carts.router.js
+│   │   └── products.router.js
+│   ├── cartManager.js
+│   └── productManager.js
 ├── app.js
+├── bun.lock
+├── LICENSE
 ├── package.json
 └── README.md
 ```
