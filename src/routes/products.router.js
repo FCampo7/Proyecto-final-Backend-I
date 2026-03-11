@@ -66,6 +66,10 @@ productsRouter.delete("/:pid", async (req, res) => {
 	try {
 		const { pid } = req.params;
 		await productManager.deleteProduct(pid);
+
+		const listaActualizada = await productManager.getProducts();
+		req.io.emit("productos", listaActualizada);
+
 		res.status(204).send();
 	} catch (error) {
 		res.status(500).json({ status: "error", message: error.message });

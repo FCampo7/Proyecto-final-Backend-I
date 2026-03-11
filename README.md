@@ -18,9 +18,16 @@ La carpeta postman contiene la colección de Postman para probar la API.
 │   ├── data
 │   │   ├── carts.json
 │   │   └── products.json
+│   ├── public
+│   │   └── realTimeProducts.js
 │   ├── routes
 │   │   ├── carts.router.js
 │   │   └── products.router.js
+│   ├── views
+│   │   ├── layouts
+│   │   │   └── main.handlebars
+│   │   ├── home.handlebars
+│   │   └── realTimeProducts.handlebars
 │   ├── cartManager.js
 │   └── productManager.js
 ├── app.js
