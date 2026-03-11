@@ -38,12 +38,10 @@ app.get("/api", (req, res) => {
 	res.render("home");
 });
 
-// RUTA PARA VISTA DINÁMICA
 app.get("/realtimeproducts", (req, res) => {
 	res.render("realTimeProducts"); // Esta será tu nueva vista
 });
 
-// RUTA PARA VISTA ESTÁTICA (Consigna)
 app.get("/home", async (req, res) => {
 	const productos = await productManager.getProducts();
 	res.render("home", { productos });
